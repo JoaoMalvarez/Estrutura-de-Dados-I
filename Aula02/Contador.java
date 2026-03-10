@@ -1,20 +1,22 @@
 public class Contador {
-    int c;
-
-    public Conta() {
-        c = 0;
-    } 
-
-    public void inc() {
-        c++;
-    }
-
-    public void dec() {
-        c--;
-    }
-
-    public void res() {
-        c = 0;
-    }
-
+    // atributos
+    int valor;
     
+    // construtores
+    public Contador() {
+        valor = 0;
+    }
+    
+    // métodos
+    public void incrementa() {
+        valor++;
+    }
+    
+    public void zera() {
+        valor = 0;
+    }
+    
+    public int getValor() {
+        return valor;
+    }
+}

@@ -1,11 +1,11 @@
-public class Pilha {
+public class Pilha <T> {
     // atributos
     private static final int TAM_DEFAULT = 100;
     private int topoPilha;
-    private int elementos[];
+    private T elementos[];
     // construtores
     public Pilha(int tamanho) {
-        this.elementos = new int[tamanho];
+        this.elementos = (T[]) new Object[tamanho];
         this.topoPilha = -1;
     }
 
@@ -21,7 +21,7 @@ public class Pilha {
         return topoPilha == elementos.length - 1;
     }
 
-    public void push(int e) throws Exception {
+    public void push(T e) throws Exception {
         if (!this.isFull()) {
             topoPilha++;
             this.elementos[topoPilha] = e;
@@ -31,9 +31,9 @@ public class Pilha {
         }
     }
 
-    public int pop() throws Exception {
+    public T pop() throws Exception {
         if (!this.isEmpty()) {
-            int temp = this.elementos[topoPilha];
+            T temp = this.elementos[topoPilha];
             topoPilha--;
             return temp;
         }
@@ -42,7 +42,7 @@ public class Pilha {
         }
     }
 
-    public int topo() throws Exception {
+    public T topo() throws Exception {
         if (!this.isEmpty()) {
             return this.elementos[topoPilha];
         }

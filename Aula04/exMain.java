@@ -1,6 +1,3 @@
-//Esse main pegou a pilha e está fazendo a transcrição de:
-// decimal para binário (assim como na conta que fazemos)
-
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +7,7 @@ public class Main {
         int numeroSalvo = numero;
         int resto;
         try {
-            Pilha p = new Pilha(20);
+            Pilha<Integer> p = new Pilha<Integer>(20);
             do {
                 resto = numero % 2;
                 p.push(resto);
