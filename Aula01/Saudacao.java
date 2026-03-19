@@ -17,5 +17,6 @@ public class Saudacao {
         int idade = entrada.nextInt();
         // variável int que pega o numero e se torna ele
         System.out.println("Você, " + nome + ", têm " + idade + " anos!");
+        entrada.close();
     }
 }

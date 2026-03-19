@@ -1,3 +1,5 @@
+@SuppressWarnings("unchecked")
+
 public class Pilha <T> {
     // atributos
     private static final int TAM_DEFAULT = 100;

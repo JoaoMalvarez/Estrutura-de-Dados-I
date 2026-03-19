@@ -8,6 +8,7 @@ public class Main {
         int numero;
         do {
             System.out.print("Número: ");
+            Scanner entrada = new Scanner(System.in);
             numero = entrada.nextInt();
             if (numero != 0) {
                 if (numero % 2 == 0) {
@@ -16,15 +17,16 @@ public class Main {
                     filaImpar.enqueue(numero);
                 }
             }
+            entrada.close();
         } while (numero != 0);
 
         boolean vezImpar = true;
         Integer valor;
-        while(!filaImpar.qIsEmpty() && !filaPar.isEmpty()) {
+        while(!filaImpar.qIsEmpty() && !filaPar.qIsEmpty()) {
             if (vezImpar)
                 valor = filaImpar.dequeue();
             else
-                valor = filaPar.enqueue();
+                valor = filaPar.dequeue();
 
             if (valor >= 0) {
                 pilha.push(valor);
@@ -51,8 +53,5 @@ public class Main {
             }
             pilha.push(filaImpar.dequeue());
         }
-        
-        entrada.close();
-
     }
 }

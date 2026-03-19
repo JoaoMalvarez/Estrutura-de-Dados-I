@@ -1,15 +1,17 @@
-public class Pilha <T> {
+@SuppressWarnings("unchecked")
+
+public class exPilha <T> {
     // atributos
     private static final int TAM_DEFAULT = 100;
     private int topoPilha;
     private T elementos[];
     // construtores
-    public Pilha(int tamanho) {
+    public exPilha(int tamanho) {
         this.elementos = (T[]) new Object[tamanho];
         this.topoPilha = -1;
     }
 
-    public Pilha() {
+    public exPilha() {
         this(TAM_DEFAULT);
     }
     // métodos

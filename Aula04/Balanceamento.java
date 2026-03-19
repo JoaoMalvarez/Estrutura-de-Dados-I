@@ -22,7 +22,7 @@ Entrada: (2+3)*5) → Saída: Parênteses não balanceados
  */
 
 import java.util.Scanner;
-public class BalanceamentoParenteses {
+public class Balanceamento {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         System.out.print("Expressão: ");
@@ -33,10 +33,11 @@ public class BalanceamentoParenteses {
         else {
             System.out.println("Os parenteses não estão balanceados.");
         }
+        entrada.close();
     }
  
     public static boolean estaBalanceada(String expressao) {
-        Pilha<Character> p = new Pilha<Character>();
+        exPilha<Character> p = new exPilha<Character>();
         for (int i = 0; i < expressao.length(); i++) {
             char c = expressao.charAt(i);
             try {

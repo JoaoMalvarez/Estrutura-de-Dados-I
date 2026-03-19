@@ -1,15 +1,16 @@
+@SuppressWarnings("unchecked")
+
 public class Fila <T> {
     // atributos
     private static final int TAM = 10;
     private int inicio, fim, qtde;
     private T e[];
     //construtores
-    public T Fila_Circular(int tamanho) {
-        this.elementos = tamanho;
-        qtde = 0;
-        inicio = 0;
-        fim = 0;
-        vetor = new int[tamanho];
+    public Fila     (int tamanho) {
+        this.qtde = 0;
+        this.inicio = 0;
+        this.fim = 0;
+        this.e = (T[]) new Object[tamanho];
     }
 
     public Fila() {
@@ -22,12 +23,12 @@ public class Fila <T> {
     }
 
     public boolean qIsFull() {
-        return this.qtde == tamanho;
+        return this.qtde == e.length;
     }
 
     public void enqueue(T elem) {
         if (!qIsFull()) {
-            e[fimm++] = elem;
+            e[fim++] = elem;
             fim = fim % e.length;
             qtde++;
         }
@@ -46,6 +47,7 @@ public class Fila <T> {
         }
         else {
             System.out.println("Underflow - Esvaziamento de Fila");
+            return null;
         }
     }
 

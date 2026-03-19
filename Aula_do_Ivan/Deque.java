@@ -1,3 +1,5 @@
+@SuppressWarnings("unchecked")
+
 public class Deque <T> {
     private static final int TAM_DEQUE = 100;
     private int inicio, fim, qntd, tamanho;
@@ -58,6 +60,7 @@ public class Deque <T> {
             if(inicio == 0) {
                 this.e[this.tamanho-1] = e;
                 inicio = this.tamanho-1;
+                qntd++;
             } else {
                 this.e[--inicio] = e;
                 qntd++;

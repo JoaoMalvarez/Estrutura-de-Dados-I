@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Main {
+public class exMain {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         System.out.print("Número decimal: ");
@@ -24,5 +24,6 @@ public class Main {
         catch (Exception e) {
             System.out.printf("Erro:  %s\n", e.getMessage());
         }
+    entrada.close();
     }
 } 

@@ -10,7 +10,7 @@ public class Main {
         int numeroSalvo = numero;
         int resto;
         try {
-            Pilha p = new Pilha(20);
+            Pilha<Integer> p = new Pilha<>(20);
             do {
                 resto = numero % 2;
                 p.push(resto);
@@ -27,5 +27,6 @@ public class Main {
         catch (Exception e) {
             System.out.printf("Erro:  %s\n", e.getMessage());
         }
+    entrada.close();    
     }
 } 
