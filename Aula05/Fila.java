@@ -4,7 +4,7 @@ public class Fila <T> {
     private int inicio, fim, qtde;
     private T e[];
     //construtores
-    public FilaCircular(int tamanho) {
+    public T Fila_Circular(int tamanho) {
         this.elementos = tamanho;
         qtde = 0;
         inicio = 0;
