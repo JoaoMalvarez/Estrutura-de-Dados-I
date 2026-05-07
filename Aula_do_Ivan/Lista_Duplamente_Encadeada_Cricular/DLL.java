@@ -114,7 +114,7 @@ public class DLL<T extends Comparable<T>> {
     public boolean insert (T data) { // Insere um elemento (data) na lista
         if (isFull()) return false;  // Se a lista está cheia, retorna false
         // Cria um novo no
-        Node<T> novoNo = new Node<T>(data, aux, aux); // Cria um novo nó com o valor data e ponteiros aux
+        Node<T> aux = new Node<T>(data, null, null); // Cria um novo nó com o valor data e ponteiros aux
         if (isEmpty()) { // Se a lista está vazia
             head = aux; // O cabeça da lista aponta para o nó auxiliar
             size++; // Incrementa o tamanho da lista
@@ -122,7 +122,7 @@ public class DLL<T extends Comparable<T>> {
         }
         // Procura a posição de inserção
         Node<T> pAnda = head; // Cria um ponteiro para percorrer a lista
-        while (data.compareTo(pAnda.getData()) > 0 ) && (pAnda.getRight() != head) { // Enquanto o valor do nó for menor que o valor a ser inserido e o ponteiro não chegar no cabeça
+        while ((data.compareTo(pAnda.getData()) > 0 ) && (pAnda.getRight() != head)) { // Enquanto o valor do nó for menor que o valor a ser inserido e o ponteiro não chegar no cabeça
             pAnda = pAnda.getRight(); // Move o ponteiro para o nó da direita
         }
         // Inserção antes do cabeça
