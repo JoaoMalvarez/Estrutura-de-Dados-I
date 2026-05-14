@@ -20,7 +20,9 @@ public class DLL<T extends Comparable<T>> {
 
     public boolean isFull() { // Verifica se a lista está cheia
         Node<T> aux = new Node<T>(); // Tenta criar um novo nó
-        return aux == null;// Se o nó criado é null, a lista está cheia
+        if (aux == null) return aux == null;// Se o nó criado é null, a lista está cheia
+        aux = null; // Apaga o novo nó se ele conseguir ser criado
+        return aux == null; // Se chegou aqui ele é falso, e a lista não está cheia
     }
 
     public void showAscending(){ // Imprime os elementos da lista em ordem crescente
