@@ -19,7 +19,6 @@ public class ADLLGenerics {
     public static void main(String[] args) {
         DLL<Trabalhador> func = new DLL<Trabalhador>();
         bancoDeDados(func);
-        System.out.println(func);
         int pos = 5;
         Node<Trabalhador> funcionario = func.get(pos);
         System.out.println("Funcionário da posição " + pos + ": ");
@@ -27,8 +26,7 @@ public class ADLLGenerics {
         System.out.println("Funcionário Removido: " + func.remove(pos).getData());
         System.out.println(func);
         System.out.println("Funcionário da posição " + func.getSize() + ": ");
-        System.out.println("Funcionário Removido: " +
-        func.remove(func.getSize()).getData());
+        System.out.println("Funcionário Removido: " + func.remove(func.getSize()).getData());
         System.out.println(func);
         System.out.println("Funcionários em ordem crescente: ");
         func.showAscending();
