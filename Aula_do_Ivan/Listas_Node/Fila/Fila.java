@@ -18,7 +18,13 @@ public class Fila <T> {
     }
 
     public void enqueue(T data) throws Exception {
-        if (isFull()) null throw Exception ("Queue overload");
-
+        if (isFull()) throw new Exception ("Queue overload");
+        Node<T> newNode = new Node<T>(data, null);
+        if (isEmpty()) {
+            inicio = fim = newNode;
+        } else {
+            fim.setProx(newNode);
+            fim = newNode;
+        }   
     }
 }
