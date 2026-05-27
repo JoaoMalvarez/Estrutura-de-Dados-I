@@ -154,7 +154,56 @@ public class A_LinkedList <T> {
         }
     }
 
-//    public T pullFirst()
-//    public T pullLast()
-//    public T pull()
+    public NodeA<T> pullFirst() {
+        if (isEmpty()) return null;
+        else {
+            NodeA<T> cabeca = head;
+            NodeA<T> aux = head.getNext();
+            head.setNext(null);
+            head = aux;
+            size--;
+            return cabeca;
+        }
+    }
+    public NodeA<T> pullLast() {
+        if (isEmpty()) return null;
+        else if (size == 1) return pullFirst();
+        else {
+            NodeA<T> rabo = tail;
+            NodeA<T> aux = get(size - 1);
+            tail = aux;
+            aux.setNext(null);
+            size--;
+            return rabo;
+        }
+    }
+    public Node<T> pull(Node<T> remove) {
+        
+    }
+
+    public boolean invert() {
+        if (isEmpty()) return false;
+        else if (size == 1) return true; // head ja é = tail
+        else {
+            NodeA<T> antes = head;
+            NodeA<T> agora = antes.getNext();
+            NodeA<T> depois = agora.getNext();
+            head.setNext(null);
+            for (int i = 1; i < size; i++) {
+                agora.setNext(antes);
+                antes = agora;
+                agora = depois;
+                if (depois != null) depois = depois.getNext();
+            }
+            agora = head;
+            this.head = tail;
+            this.tail = agora;
+            return true;
+        }
+    }
+
+
+
+
+
 }
