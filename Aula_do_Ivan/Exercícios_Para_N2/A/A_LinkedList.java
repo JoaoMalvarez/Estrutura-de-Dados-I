@@ -177,8 +177,33 @@ public class A_LinkedList <T> {
             return rabo;
         }
     }
-    public Node<T> pull(Node<T> remove) {
-        
+    public NodeA<T> pull(NodeA<T> remove) {
+        if (isEmpty()) return null;
+        else if (remove == null) return null;
+        else {
+            NodeA<T> pAnda = head;
+            NodeA<T> aux;
+            while(remove != pAnda) {
+                if (pAnda == tail) return null;
+                aux = pAnda;
+                pAnda = pAnda.getNext();
+            }
+            if (pAnda == head) return pullFirst();
+            else if (pAnda == tail) return pullLast();
+            aux.setNext(pAnda.getNext());
+            return pAnda;
+        }
+    }
+
+    public NodeA<T> get(T data) {
+        if (isEmpty()) { return null; }
+        if (data == null) { return null; }
+        NodeA<T> pAnda = head;
+        while(data != pAnda.getData()) {
+            if (pAnda == tail) return null;
+            pAnda = pAnda.getNext();
+        }
+        return pAnda;
     }
 
     public boolean invert() {
